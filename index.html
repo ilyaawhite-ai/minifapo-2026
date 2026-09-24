@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Fai Folau — Festival de Wallis et Futuna</title>
+  <meta name="description" content="Fai Folau, le festival de Wallis et Futuna. Chants, danses, savoirs et rencontres : un voyage entre les îles et entre les générations.">
+  <meta name="theme-color" content="#0A1C23">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Fai Folau — Festival de Wallis et Futuna">
+  <meta property="og:description" content="La mer ne sépare pas. Elle relie.">
+  <meta property="og:image" content="assets/images/og.jpg">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/instrument-serif-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/main.css">
+
+  <script>
+    // Active les états animés uniquement si JavaScript est disponible.
+    document.documentElement.classList.add('js');
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('reduced-motion');
+    }
+  </script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#contenu">Aller au contenu</a>
+
+  <!-- ============================================================
+       EN-TÊTE — volontairement minimal
+       ============================================================ -->
+  <header class="header" data-header data-on="dark">
+    <a class="header__brand" href="#accueil" aria-label="Fai Folau — retour à l’accueil">Fai Folau</a>
+    <nav class="header__nav" aria-label="Accès rapides">
+      <a class="header__link" href="#programme">Programme</a>
+      <a class="header__cta" href="#participer">Participer</a>
+      <button class="header__menu" type="button" aria-expanded="false" aria-controls="menu" data-menu-open>
+        <span class="header__menu-label">Menu</span>
+        <span class="header__menu-icon" aria-hidden="true"><i></i><i></i></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Menu plein écran : la liste des escales -->
+  <div class="menu" id="menu" data-menu hidden>
+    <div class="menu__inner">
+      <button class="menu__close" type="button" data-menu-close>Fermer</button>
+      <nav aria-label="Navigation principale">
+        <ol class="menu__list">
+          <li><a href="#voyage"><span class="menu__num">01</span>Le voyage</a></li>
+          <li><a href="#territoire"><span class="menu__num">02</span>Wallis &amp; Futuna</a></li>
+          <li><a href="#festival"><span class="menu__num">03</span>Le festival</a></li>
+          <li><a href="#programme"><span class="menu__num">04</span>Programme</a></li>
+          <li><a href="#participants"><span class="menu__num">05</span>Participants</a></li>
+          <li><a href="#transmission"><span class="menu__num">06</span>Transmission</a></li>
+          <li><a href="#participer"><span class="menu__num">07</span>Participer</a></li>
+        </ol>
+      </nav>
+      <p class="menu__foot label"><span>Wallis</span><span>Futuna</span><span>2026</span></p>
+    </div>
+  </div>
+
+  <main id="contenu">
+
+    <!-- ============================================================
+         00 — HERO
+         Image : assets/images/hero.jpg  (ou vidéo : assets/images/hero.mp4)
+         ============================================================ -->
+    <section class="hero" id="accueil" data-theme="dark" aria-label="Fai Folau">
+      <div class="hero__media" data-parallax="0.12">
+        <figure class="media" data-tone="ocean">
+          <!-- Pour une vidéo, décommenter et garder l’image comme affiche (poster) :
+          <video autoplay muted loop playsinline poster="assets/images/hero.jpg">
+            <source src="assets/images/hero.mp4" type="video/mp4">
+          </video>
+          -->
+          <img src="assets/images/hero.jpg" alt="Le lagon de Wallis au lever du jour" fetchpriority="high" decoding="async" onerror="this.hidden=true">
+          <span class="media__ph" aria-hidden="true">
+            <span>Image à venir</span>
+            <span>Le lagon de Wallis, lumière du matin — hero.jpg</span>
+          </span>
+        </figure>
+      </div>
+      <div class="hero__veil" aria-hidden="true"></div>
+
+      <div class="hero__inner">
+        <p class="hero__meta label" data-intro>
+          <span>Festival</span><span>Wallis · Futuna</span><span>2026</span>
+        </p>
+
+        <div class="hero__mark">
+          <h1 class="wordmark" aria-label="Fai Folau">
+            <span class="wordmark__line" aria-hidden="true"><span class="wordmark__c" style="--i:0">F</span><span class="wordmark__c" style="--i:1">a</span><span class="wordmark__c" style="--i:2">i</span></span>
+            <span class="wordmark__line" aria-hidden="true"><span class="wordmark__c" style="--i:3">F</span><span class="wordmark__c" style="--i:4">o</span><span class="wordmark__c" style="--i:5">l</span><span class="wordmark__c" style="--i:6">a</span><span class="wordmark__c" style="--i:7">u</span></span>
+          </h1>
+          <span class="hero__horizon" aria-hidden="true"></span>
+          <div class="hero__sea" data-swell="hero" aria-hidden="true"></div>
+        </div>
+
+        <p class="hero__lede" data-intro>La mer ne sépare pas.<br>Elle relie.</p>
+      </div>
+
+      <a class="hero__cue" href="#voyage" data-intro>
+        <span>Faire le voyage</span>
+        <span class="hero__cue-line" aria-hidden="true"></span>
+      </a>
+    </section>
+
+    <!-- ============================================================
+         01 — LE VOYAGE
+         Le scroll devient une traversée : Wallis → Futuna.
+         Chaque <li> est une étape ; ajouter/retirer librement.
+         ============================================================ -->
+    <section class="voyage" id="voyage" data-theme="dark" data-voyage aria-labelledby="voyage-titre">
+      <div class="voyage__stage">
+        <header class="escale wrap">
+          <p class="escale__id"><span class="escale__num">01</span><span id="voyage-titre">Le voyage</span></p>
+          <p class="escale__coords" data-voyage-coords>13°17′S · 176°10′O</p>
+        </header>
+
+        <div class="voyage__map" aria-hidden="true">
+          <svg class="route" viewBox="0 0 1000 700" preserveAspectRatio="xMidYMid meet">
+            <!-- Positions relatives réelles : Futuna est à ~230 km à l’ouest-sud-ouest de Wallis -->
+            <path class="route__ghost" d="M800 220 C 700 250, 640 330, 540 360 S 330 420, 200 545" pathLength="1"/>
+            <path class="route__line" data-route d="M800 220 C 700 250, 640 330, 540 360 S 330 420, 200 545" pathLength="1"/>
+            <circle class="route__isle" cx="800" cy="220" r="5"/>
+            <circle class="route__isle" cx="200" cy="545" r="5"/>
+            <circle class="route__ring" cx="800" cy="220" r="14"/>
+            <circle class="route__ring route__ring--end" cx="200" cy="545" r="14"/>
+            <circle class="route__traveller" data-traveller cx="800" cy="220" r="3.5"/>
+          </svg>
+          <p class="route__label route__label--wallis">
+            <span class="route__name">Wallis</span>
+            <span class="route__sub" lang="wls">ʻUvea</span>
+            <span class="route__coord">13°17′S · 176°10′O</span>
+          </p>
+          <p class="route__label route__label--futuna">
+            <span class="route__name">Futuna</span>
+            <span class="route__sub">et Alofi</span>
+            <span class="route__coord">14°17′S · 178°09′O</span>
+          </p>
+          <p class="route__distance"><span data-voyage-km>230</span>&nbsp;km</p>
+        </div>
+
+        <ol class="voyage__steps">
+          <li class="voyage__step">Il y a d’abord la&nbsp;mer.</li>
+          <li class="voyage__step">Deux cent trente kilomètres entre Wallis et&nbsp;Futuna.</li>
+          <li class="voyage__step">Depuis toujours, on la traverse pour se&nbsp;rencontrer.</li>
+          <li class="voyage__step">On emporte des chants, des gestes, une&nbsp;langue.</li>
+          <li class="voyage__step">Et le voyage continue&nbsp;: d’une île à l’autre, d’une génération à&nbsp;l’autre.</li>
+          <li class="voyage__step voyage__step--final">
+            <span class="voyage__word">Fai Folau</span>
+            <span class="voyage__meaning">Faire le voyage.</span>
+          </li>
+        </ol>
+
+        <div class="voyage__progress wrap" aria-hidden="true">
+          <span class="voyage__count"><span data-voyage-step>01</span> / <span data-voyage-total>06</span></span>
+          <span class="voyage__bar"><i data-voyage-bar></i></span>
+        </div>
+
+        <div class="voyage__sea" data-swell="deep" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         02 — WALLIS & FUTUNA
+         Wallis : horizontale (île basse, lagon) · Futuna : verticale (îles hautes)
+         Images : assets/images/wallis.jpg (paysage) · assets/images/futuna.jpg (portrait)
+         ============================================================ -->
+    <section class="territoire" id="territoire" data-theme="light" aria-labelledby="territoire-titre">
+      <header class="escale wrap">
+        <p class="escale__id"><span class="escale__num">02</span><span>Wallis &amp; Futuna</span></p>
+        <p class="escale__coords">Océan Pacifique Sud</p>
+      </header>
+
+      <h2 class="display territoire__title wrap" id="territoire-titre" data-reveal>
+        Deux îles, trois royaumes,<br><em>un seul territoire.</em>
+      </h2>
+
+      <article class="ile ile--wallis" aria-labelledby="ile-wallis">
+        <figure class="media ile__media" data-tone="lagon" data-reveal="image">
+          <img src="assets/images/wallis.jpg" alt="Le lagon de Wallis et ses îlots" loading="lazy" decoding="async" onerror="this.hidden=true" data-parallax="0.06">
+          <span class="media__ph" aria-hidden="true">
+            <span>Image à venir</span>
+            <span>Wallis, le lagon et ses îlots — format panoramique — wallis.jpg</span>
+          </span>
+        </figure>
+
+        <div class="ile__body wrap">
+          <h3 class="ile__name" id="ile-wallis" data-reveal>Wallis <span class="ile__alt" lang="wls">ʻUvea</span></h3>
+          <div class="ile__text">
+            <p class="ile__lede" data-reveal>Une île basse, enlacée par son&nbsp;lagon.</p>
+            <p data-reveal>Autour d’elle, une couronne d’îlots. En son cœur, des lacs de cratère. Ici, l’horizon est&nbsp;partout.</p>
+            <dl class="facts" data-reveal>
+              <div><dt>Royaume</dt><dd lang="wls">ʻUvea</dd></div>
+              <div><dt>Langue</dt><dd>Wallisien</dd></div>
+              <div><dt>Position</dt><dd>13°17′S · 176°10′O</dd></div>
+            </dl>
+          </div>
+        </div>
+      </article>
+
+      <div class="passage wrap" aria-hidden="true" data-reveal>
+        <span>Wallis</span>
+        <span class="passage__line"></span>
+        <span class="passage__km">230 km</span>
+        <span class="passage__line"></span>
+        <span>Futuna</span>
+      </div>
+
+      <article class="ile ile--futuna wrap" aria-labelledby="ile-futuna">
+        <div class="ile__body">
+          <h3 class="ile__name" id="ile-futuna" data-reveal>Futuna <span class="ile__alt">et Alofi</span></h3>
+          <div class="ile__text">
+            <p class="ile__lede" data-reveal>Deux îles hautes. La forêt descend jusqu’à la&nbsp;mer.</p>
+            <p data-reveal>Futuna porte deux royaumes, <span lang="fud">Alo</span> et <span lang="fud">Sigave</span>. Le mont Puke s’y élève à 524&nbsp;mètres au-dessus de&nbsp;l’océan.</p>
+            <dl class="facts" data-reveal>
+              <div><dt>Royaumes</dt><dd lang="fud">Alo · Sigave</dd></div>
+              <div><dt>Langue</dt><dd>Futunien</dd></div>
+              <div><dt>Position</dt><dd>14°17′S · 178°09′O</dd></div>
+            </dl>
+          </div>
+        </div>
+        <figure class="media ile__media" data-tone="vegetal" data-reveal="image">
+          <img src="assets/images/futuna.jpg" alt="La côte haute et boisée de Futuna" loading="lazy" decoding="async" onerror="this.hidden=true" data-parallax="0.06">
+          <span class="media__ph" aria-hidden="true">
+            <span>Image à venir</span>
+            <span>Futuna, côte haute et forêt — format vertical — futuna.jpg</span>
+          </span>
+        </figure>
+      </article>
+
+      <p class="territoire__close wrap" data-reveal>
+        Deux langues, deux voix.<br><em>Une même&nbsp;mer.</em>
+      </p>
+    </section>
+
+    <!-- ============================================================
+         03 — LE FESTIVAL
+         Quoi · Qui · Pourquoi — en trois réponses.
+         ============================================================ -->
+    <section class="festival" id="festival" data-theme="light" aria-labelledby="festival-titre">
+      <header class="escale wrap">
+        <p class="escale__id"><span class="escale__num">03</span><span>Le festival</span></p>
+        <p class="escale__coords">Édition 2026</p>
+      </header>
+
+      <div class="wrap">
+        <h2 class="display festival__title" id="festival-titre" data-reveal>
+          Un festival pour que le voyage <em>continue.</em>
+        </h2>
+        <p class="lede festival__lede" data-reveal>
+          Fai Folau réunit, le temps de quelques jours, toutes celles et ceux qui font vivre la culture de Wallis et de&nbsp;Futuna.
+        </p>
+
+        <div class="answers">
+          <div class="answer" data-reveal>
+            <h3 class="answer__q"><span class="answer__n">01</span>Ce qui s’y passe</h3>
+            <p class="answer__a">Des chants et des danses. Des gestes d’artisans. Des récits de mer. Des scènes ouvertes, des ateliers, des repas&nbsp;partagés.</p>
+          </div>
+          <div class="answer" data-reveal>
+            <h3 class="answer__q"><span class="answer__n">02</span>Qui y participe</h3>
+            <p class="answer__a">Les villages de Wallis et de Futuna. Les familles venues de <span class="nowrap">Nouvelle-Calédonie</span> et d’ailleurs. Des artistes invités du Pacifique. Et&nbsp;vous.</p>
+          </div>
+          <div class="answer" data-reveal>
+            <h3 class="answer__q"><span class="answer__n">03</span>Pourquoi</h3>
+            <p class="answer__a">Parce qu’une culture vit quand elle circule&nbsp;: entre les îles, entre les générations, entre ceux qui partent et ceux qui&nbsp;restent.</p>
+          </div>
+        </div>
+
+        <!-- INFOS PRATIQUES — à compléter dès que les dates sont officielles -->
+        <dl class="essentials" data-reveal>
+          <div><dt>Quand</dt><dd>2026 — dates à annoncer</dd></div>
+          <div><dt>Où</dt><dd>Wallis et Futuna</dd></div>
+          <div><dt>Pour qui</dt><dd>Tous les publics</dd></div>
+          <div><dt>Langues</dt><dd>Wallisien, futunien, français</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         04 — PROGRAMME
+         Contenu INDICATIF : remplacer titres, horaires et lieux.
+         Structure : un .day par jour, un .slot par moment.
+         ============================================================ -->
+    <section class="programme" id="programme" data-theme="light" aria-labelledby="programme-titre">
+      <header class="escale wrap">
+        <p class="escale__id"><span class="escale__num">04</span><span>Programme</span></p>
+        <p class="escale__coords">Trois jours · deux îles</p>
+      </header>
+
+      <div class="wrap">
+        <div class="programme__head">
+          <h2 class="display" id="programme-titre" data-reveal>Programme</h2>
+          <p class="programme__intro" data-reveal>Trois jours, d’une île à l’autre. <br>Quoi, quand, où&nbsp;: l’essentiel, simplement.</p>
+        </div>
+
+        <div class="days" role="tablist" aria-label="Jours du festival" data-tabs>
+          <button class="days__tab" role="tab" id="tab-j1" aria-controls="jour-1" aria-selected="true" type="button">
+            <span class="days__n">Jour 1</span>
+            <span class="days__name">Le départ</span>
+            <span class="days__isle">Wallis</span>
+          </button>
+          <button class="days__tab" role="tab" id="tab-j2" aria-controls="jour-2" aria-selected="false" tabindex="-1" type="button">
+            <span class="days__n">Jour 2</span>
+            <span class="days__name">La traversée</span>
+            <span class="days__isle">Futuna</span>
+          </button>
+          <button class="days__tab" role="tab" id="tab-j3" aria-controls="jour-3" aria-selected="false" tabindex="-1" type="button">
+            <span class="days__n">Jour 3</span>
+            <span class="days__name">La transmission</span>
+            <span class="days__isle">Wallis</span>
+          </button>
+        </div>
+
+        <div class="day" id="jour-1" role="tabpanel" aria-labelledby="tab-j1">
+          <h3 class="day__title">Jour 1 — Le départ <span>Wallis · date à annoncer</span></h3>
+          <ol class="slots">
+            <li class="slot">
+              <time class="slot__time">07:00</time>
+              <div class="slot__what"><h4>Accueil des délégations</h4><p>Les voyageurs arrivent, les villages les reçoivent.</p></div>
+              <p class="slot__where"><span class="slot__isle">Wallis</span>Bord de mer, Mata-Utu</p>
+            </li>
+            <li class="slot">
+              <time class="slot__time">10:00</time>
+              <div class="slot__what"><h4>Ouverture du festival</h4><p>Les paroles d’accueil, et le voyage commence.</p></div>
+              <p class="slot__where"><span class="slot__isle">Wallis</span>Mata-Utu</p>
+            </li>
+            <li class="slot">
+              <time class="slot__time">14:00</time>
+              <div class="slot__what"><h4>Ateliers de transmission</h4><p>Tressage, sculpture, chant&nbsp;: apprendre auprès des anciens.</p></div>
+              <p class="slot__where"><span class="slot__isle">Wallis</span>Villages du district de Hahake</p>
+            </li>
+            <li class="slot">
+              <time class="slot__time">19:00</time>
+              <div class="slot__what"><h4>Première nuit</h4><p>Chants et danses des villages de Wallis.</p></div>
+              <p class="slot__where"><span class="slot__isle">Wallis</span>Scène du rivage, Mata-Utu</p>
+            </li>
+          </ol>
+        </div>
+
+        <div class="day" id="jour-2" role="tabpanel" aria-labelledby="tab-j2">
+          <h3 class="day__title">Jour 2 — La traversée <span>Futuna · date à annoncer</span></h3>
+          <ol class="slots">
+            <li class="slot">
+              <time class="slot__time">08:00</time>
+              <div class="slot__what"><h4>Arrivée à Futuna</h4><p>Les délégations sont accueillies de l’autre côté de la mer.</p></div>
+              <p class="slot__where"><span class="slot__isle">Futuna</span>Leava, Sigave</p>
+            </li>
+            <li class="slot">
+              <time class="slot__time">11:00</time>
+              <div class="slot__what"><h4>Récits de mer</h4><p>Ce que l’océan enseigne&nbsp;: paroles de navigateurs, d’hier et d’aujourd’hui.</p></div>
+              <p class="slot__where"><span class="slot__isle">Futuna</span>Leava, Sigave</p>
+            </li>
+            <li class="slot">
+              <time class="slot__time">15:00</time>
+              <div class="slot__what"><h4>Rencontre des artistes</h4><p>Artistes de Futuna, de Wallis et du Pacifique, face à face.</p></div>
+              <p class="slot__where"><span class="slot__isle">Futuna</span>Alo</p>
+            </li>
+            <li class="slot">
+              <time class="slot__time">19:30</time>
+              <div class="slot__what"><h4>Nuit de Futuna</h4><p>Chants et danses des villages de Futuna.</p></div>
+              <p class="slot__where"><span class="slot__isle">Futuna</span>Leava, Sigave</p>
+            </li>
+          </ol>
+        </div>
+
+        <div class="day" id="jour-3" role="tabpanel" aria-labelledby="tab-j3">
+          <h3 class="day__title">Jour 3 — La transmission <span>Wallis · date à annoncer</span></h3>
+          <ol class="slots">
+            <li class="slot">
+              <time class="slot__time">09:00</time>
+              <div class="slot__what"><h4>La journée des jeunes</h4><p>Les plus jeunes montrent ce qu’ils ont appris.</p></div>
+              <p class="slot__where"><span class="slot__isle">Wallis</span>Mata-Utu</p>
+            </li>
+            <li class="slot">
+              <time class="slot__time">14:00</time>
+              <div class="slot__what"><h4>Le grand rassemblement</h4><p>Toutes les délégations réunies, Wallis et Futuna ensemble.</p></div>
+              <p class="slot__where"><span class="slot__isle">Wallis</span>Mata-Utu</p>
+            </li>
+            <li class="slot">
+              <time class="slot__time">18:00</time>
+              <div class="slot__what"><h4>Clôture</h4><p>Le festival s’achève. Le voyage, lui, continue.</p></div>
+              <p class="slot__where"><span class="slot__isle">Wallis</span>Scène du rivage, Mata-Utu</p>
+            </li>
+          </ol>
+        </div>
+
+        <p class="programme__note">Programme indicatif. Les horaires et les lieux définitifs seront publiés prochainement.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         05 — PARTICIPANTS
+         Portraits : assets/images/portrait-1.jpg, portrait-2.jpg
+         Index : un <li> par discipline ou par artiste (data-preview = image au survol)
+         ============================================================ -->
+    <section class="participants" id="participants" data-theme="dark" aria-labelledby="participants-titre">
+      <header class="escale wrap">
+        <p class="escale__id"><span class="escale__num">05</span><span>Participants</span></p>
+        <p class="escale__coords">Artistes · villages · invités</p>
+      </header>
+
+      <div class="wrap">
+        <h2 class="display participants__title" id="participants-titre" data-reveal>
+          Ceux qui font <em>le voyage.</em>
+        </h2>
+
+        <div class="portraits">
+          <figure class="portrait portrait--a" data-reveal="image">
+            <div class="media" data-tone="basalte">
+              <img src="assets/images/portrait-1.jpg" alt="" loading="lazy" decoding="async" onerror="this.hidden=true" data-parallax="0.05">
+              <span class="media__ph" aria-hidden="true"><span>Portrait à venir</span><span>portrait-1.jpg — format 4:5</span></span>
+            </div>
+            <figcaption>
+              <span class="portrait__name">Artiste à annoncer</span>
+              <span class="portrait__role">Chant · Wallis</span>
+            </figcaption>
+          </figure>
+          <figure class="portrait portrait--b" data-reveal="image">
+            <div class="media" data-tone="terre">
+              <img src="assets/images/portrait-2.jpg" alt="" loading="lazy" decoding="async" onerror="this.hidden=true" data-parallax="0.09">
+              <span class="media__ph" aria-hidden="true"><span>Portrait à venir</span><span>portrait-2.jpg — format 3:4</span></span>
+            </div>
+            <figcaption>
+              <span class="portrait__name">Artiste à annoncer</span>
+              <span class="portrait__role">Danse · Futuna</span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <p class="lede participants__lede" data-reveal>
+          Des voix, des mains, des corps en mouvement. Ceux qui chantent, dansent, sculptent, tressent et naviguent — et ceux qui apprennent à leurs&nbsp;côtés.
+        </p>
+
+        <ol class="index" data-index>
+          <li class="index__row" data-reveal data-preview="assets/images/index-chant.jpg" data-preview-label="Chant">
+            <span class="index__n">01</span><span class="index__name">Chant</span><span class="index__desc">Les voix des villages</span>
+          </li>
+          <li class="index__row" data-reveal data-preview="assets/images/index-danse.jpg" data-preview-label="Danse">
+            <span class="index__n">02</span><span class="index__name">Danse</span><span class="index__desc">Les groupes de Wallis et de Futuna</span>
+          </li>
+          <li class="index__row" data-reveal data-preview="assets/images/index-artisanat.jpg" data-preview-label="Artisanat">
+            <span class="index__n">03</span><span class="index__name">Artisanat</span><span class="index__desc">Sculpture, tressage, tapa</span>
+          </li>
+          <li class="index__row" data-reveal data-preview="assets/images/index-mer.jpg" data-preview-label="La mer">
+            <span class="index__n">04</span><span class="index__name">La mer</span><span class="index__desc">Pirogues, pêche, savoirs de navigation</span>
+          </li>
+          <li class="index__row" data-reveal data-preview="assets/images/index-diaspora.jpg" data-preview-label="Diaspora">
+            <span class="index__n">05</span><span class="index__name">Diaspora</span><span class="index__desc">Nouvelle-Calédonie et au-delà</span>
+          </li>
+          <li class="index__row" data-reveal data-preview="assets/images/index-invites.jpg" data-preview-label="Invités">
+            <span class="index__n">06</span><span class="index__name">Invités</span><span class="index__desc">Artistes du Pacifique</span>
+          </li>
+        </ol>
+
+        <p class="participants__note label" data-reveal>Les artistes seront annoncés prochainement</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         06 — TRANSMISSION
+         Le rythme ralentit. Image : assets/images/transmission.jpg
+         ============================================================ -->
+    <section class="transmission" id="transmission" data-theme="warm" aria-labelledby="transmission-titre">
+      <header class="escale wrap">
+        <p class="escale__id"><span class="escale__num">06</span><span id="transmission-titre">Transmission</span></p>
+        <p class="escale__coords">Des aînés aux enfants</p>
+      </header>
+
+      <div class="transmission__grid wrap">
+        <figure class="media transmission__media" data-tone="fibre" data-reveal="image">
+          <img src="assets/images/transmission.jpg" alt="Les mains d’une aînée guidant celles d’un enfant" loading="lazy" decoding="async" onerror="this.hidden=true">
+          <span class="media__ph" aria-hidden="true">
+            <span>Image à venir</span>
+            <span>Mains d’une aînée et d’un enfant, un geste transmis — transmission.jpg</span>
+          </span>
+        </figure>
+
+        <div class="transmission__lines">
+          <p data-reveal="slow">Un chant appris d’une grand-mère.</p>
+          <p data-reveal="slow">Un geste répété jusqu’à devenir le&nbsp;sien.</p>
+          <p data-reveal="slow">Une pirogue construite à plusieurs&nbsp;mains.</p>
+          <p data-reveal="slow">Une langue parlée à la table du&nbsp;soir.</p>
+        </div>
+      </div>
+
+      <blockquote class="transmission__quote wrap" data-reveal="slow">
+        <p>Fai Folau,<br>c’est faire voyager<br><em>ce que l’on a reçu.</em></p>
+      </blockquote>
+    </section>
+
+    <!-- ============================================================
+         07 — L’INVITATION
+         Image : assets/images/finale.jpg
+         ============================================================ -->
+    <section class="finale" id="participer" data-theme="dark" aria-labelledby="finale-titre">
+      <div class="finale__media" data-parallax="0.1">
+        <figure class="media" data-tone="dusk">
+          <img src="assets/images/finale.jpg" alt="Le rivage au crépuscule, face au lagon" loading="lazy" decoding="async" onerror="this.hidden=true">
+          <span class="media__ph" aria-hidden="true">
+            <span>Image à venir</span>
+            <span>Le rivage au crépuscule, un rassemblement face à la mer — finale.jpg</span>
+          </span>
+        </figure>
+      </div>
+      <div class="finale__veil" aria-hidden="true"></div>
+
+      <div class="finale__inner wrap">
+        <p class="escale__id label" data-reveal><span class="escale__num">07</span><span>L’invitation</span></p>
+        <h2 class="finale__title" id="finale-titre" data-reveal>Le voyage commence&nbsp;ici.</h2>
+        <p class="finale__text" data-reveal>Venez à Wallis et à Futuna. Écoutez, apprenez, partagez.</p>
+        <div class="finale__actions" data-reveal>
+          <!-- LIEN : remplacer #contact par le formulaire d’inscription officiel -->
+          <a class="btn" href="#contact">
+            <span>Participer au festival</span>
+            <svg class="btn__arrow" viewBox="0 0 24 12" aria-hidden="true"><path d="M0 6h22M17 1l5 5-5 5"/></svg>
+          </a>
+          <a class="textlink" href="#programme">Voir le programme</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       PIED DE PAGE
+       ============================================================ -->
+  <footer class="footer" id="contact" data-theme="dark">
+    <div class="footer__grid wrap">
+      <div>
+        <p class="label">Participer</p>
+        <p>Venir en visiteur, présenter un groupe, rejoindre les bénévoles&nbsp;: les inscriptions ouvriront prochainement.</p>
+      </div>
+      <div>
+        <p class="label">Contact</p>
+        <!-- CONTACT : remplacer par l’adresse officielle -->
+        <p>Adresse de contact à venir</p>
+      </div>
+      <div>
+        <p class="label">Le festival</p>
+        <ul class="footer__links">
+          <li><a href="#voyage">Le voyage</a></li>
+          <li><a href="#programme">Programme</a></li>
+          <li><a href="#participants">Participants</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="footer__mark" aria-hidden="true">Fai Folau</p>
+
+    <div class="footer__base wrap">
+      <span>© 2026 Fai Folau — Wallis-et-Futuna</span>
+      <span>Photographies&nbsp;: crédits à compléter</span>
+    </div>
+  </footer>
+
+  <!-- Aperçu flottant de l’index des participants (desktop) -->
+  <div class="preview" data-preview-box aria-hidden="true">
+    <div class="media" data-tone="ocean">
+      <img alt="" hidden>
+      <span class="media__ph"><span>Image à venir</span><span data-preview-text></span></span>
+    </div>
+  </div>
+</body>
+</html>
