@@ -22,6 +22,16 @@
   Promise.race([fontsReady, new Promise((r) => setTimeout(r, 1400))]).then(ready);
 
   /* ------------------------------------------------------------------------
+     1 bis. Cadres d'images — tant que la photo n'est pas déposée, on laisse
+     voir le fond d'attente (complète l'attribut onerror du HTML).
+     ------------------------------------------------------------------------ */
+  $$('.media > img[src]').forEach((img) => {
+    const miss = () => { img.hidden = true; };
+    if (img.complete && img.naturalWidth === 0) miss();
+    else img.addEventListener('error', miss, { once: true });
+  });
+
+  /* ------------------------------------------------------------------------
      2. Houle — lignes de mer en perspective, qui dérivent très lentement.
      Proches de l'horizon : serrées, calmes. Proches de nous : amples.
      ------------------------------------------------------------------------ */
